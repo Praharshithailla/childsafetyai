@@ -1,0 +1,133 @@
+/* FULL PAGE */
+.role-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(-45deg, #7c3aed, #9333ea, #6366f1, #3b82f6);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* WRAPPER */
+.role-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 90%;
+  max-width: 1100px;
+}
+
+/* LEFT ANIMATION */
+.role-animation {
+  flex: 1;
+  max-width: 400px;
+}
+
+.role-animation svg {
+  width: 100%;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* FLOAT EFFECT */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RIGHT CARD */
+.glass-card {
+  flex: 1;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+/* TEXT */
+.title {
+  color: white;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #cbd5f5;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.role-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* CARD */
+.role-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* ICON */
+.role-icon {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.role-card h3 {
+  color: white;
+}
+
+.role-card p {
+  color: #e0e7ff;
+}
+
+/* 📱 TABLET */
+@media (max-width: 900px) {
+  .role-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .role-animation {
+    max-width: 250px;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .role-animation {
+    display: none;
+  }
+
+  .glass-card {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .role-buttons {
+    flex-direction: column;
+  }
+}
